@@ -1,5 +1,6 @@
+const Request = require ('./Request')
 module.exports=(sequelize,DataTypes)=>{
-    const measures = sequelize.define("measures",
+    const Measures = sequelize.define("Measures",
     {
         name:{
             type: DataTypes.STRING,
@@ -10,10 +11,20 @@ module.exports=(sequelize,DataTypes)=>{
             allowNull:false
         },
         measure:{
-            type: DataTypes.DECIMAL(11,10),
+            type: DataTypes.DECIMAL(10,2),
             allowNull: false
         }   
     })
-    return measures
+    Measures.associate = (models) =>{
+        Measures.belongsTo(models.Request,{
+            foreignKey: "requestId",
+            constraint:true
+        })
+        models.Request.hasOne(Measures,{
+            foreignKey: "requestId",
+            constraint:true
+        })
+    }
+    return Measures
 
 }

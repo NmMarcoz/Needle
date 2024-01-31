@@ -1,3 +1,5 @@
+const Costumer = require('./Costumer')
+
 module.exports = (sequelize, DataTypes) =>{
     const Request = sequelize.define("Request", {
         requestName:{
@@ -9,12 +11,24 @@ module.exports = (sequelize, DataTypes) =>{
             allowNull:true
         },
         requestValue:{
-            type:DataTypes.DECIMAL(11,10),
+            type:DataTypes.DECIMAL(10,2),
             allowNull:false
         },
         requestDeadline:{
             type:DataTypes.DATE
         }
-    })
+    }) 
+    Request.associate = (models) =>{
+        Request.belongsTo(models.Costumer,{
+            foreignKey: "costumerId",
+            constraint: true
+        })
+        models.Costumer.hasMany(Request,{
+            foreignKey: "costumerId",
+            constraint: true
+        })
+
+    }
+
     return Request
 }
