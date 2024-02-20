@@ -1,4 +1,5 @@
 import './MainPageStyles.css'
+import Button from './Button';
 
 function MainPage(){
     return(
@@ -15,6 +16,7 @@ function MainPage(){
                         <a className='inputText'> phone number</a>
                         <input className='inputBox'/>
                     </div>
+                    <Button text = "create" color = {0}/>
                 </div>
             </div>
             <div className='rightContainer'>
@@ -30,6 +32,7 @@ function MainPage(){
                         <a className='altInputText'> client Id</a>
                         <input className='altInputBox'/>
                     </div>
+                    <Button text = "send" color = {1}/>
                 </div>
             </div>
         </div>

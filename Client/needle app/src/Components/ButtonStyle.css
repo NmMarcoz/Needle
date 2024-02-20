@@ -1,0 +1,19 @@
+.button{
+    background: #E3E3DC;
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    width: 213px;
+    height: 56px;
+    margin-top: 18px;
+}
+.altButton{
+    color: #E3E3DC;
+    background: #1E1E1E;;
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    width: 213px;
+    height: 56px;
+    margin-top: 18px;
+}
