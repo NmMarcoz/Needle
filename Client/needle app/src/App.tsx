@@ -1,7 +1,8 @@
-import MainPage from "./Components/MainPage"
+//import MainPage from "./pages/MainPage"
+import CostumerPage from "./pages/CostumerPage"
 
 function App(){
-  return <MainPage/>
+  return <CostumerPage/>
 }
 
 export default App

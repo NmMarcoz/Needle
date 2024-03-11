@@ -1,11 +1,12 @@
 .button{
-    background: #E3E3DC;
+    background: #fFf;
     border-radius: 12px;
     font-size: 18px;
     text-align: center;
     width: 213px;
     height: 56px;
     margin-top: 18px;
+    border-style: none;
 }
 .altButton{
     color: #E3E3DC;
@@ -16,4 +17,5 @@
     width: 213px;
     height: 56px;
     margin-top: 18px;
+    border-style: none;
 }
