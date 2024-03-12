@@ -1,7 +1,7 @@
 const express = require ('express');
 const app = express();
 app.use(express.json());
-const  db = require('./models')
+const db = require('./models')
 
 const costumersRouter = require('./routes/Costumer')
 const requestRouter = require('./routes/Request')
