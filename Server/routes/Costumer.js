@@ -8,6 +8,7 @@ router.get("/", costumersController.get)
 router.get("/email", costumersController.getByEmail)
 
 router.post("/", costumersController.create)
+router.patch("/", costumersController.updateUser)
 
 
 module.exports = router
