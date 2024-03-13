@@ -21,6 +21,7 @@ function Button({text, color, url, formData}: buttonProps){
                 body: JSON.stringify(formData),
             })
             if(!response.ok){
+                console.log(response)
                 throw new Error("Erro ao enviar dados")
             }
             const data = await response.json();

@@ -1,9 +1,50 @@
 import "../styles/CostumerPageStyles.css";
 import Button from "../Components/Button";
+import React, { useState } from "react";
 //import { useState } from "react";
 
 function CostumerPage() {
-  const BASE_URL = "http://localhost:3001/costumer";
+  const COSTUMER_URL = "http://localhost:3001/costumer";
+  const REQUEST_URL = "http://localhost:3001/request"
+
+  interface clientFormInterface {
+    name: string;
+    email: string;
+    phoneNumber: string;
+  }
+  interface reqFormInterface {
+    requestName: string;
+    requestDescription: string;
+    requestDeadline: string;
+    costumerId: number;
+  }
+
+  const [clientForm, setClientForm] = useState<clientFormInterface>({
+    name: "",
+    email: "",
+    phoneNumber: "",
+  });
+  const [reqForm, setReqForm] = useState<reqFormInterface>({
+    requestName: "",
+    requestDescription: "",
+    requestDeadline: "",
+    costumerId: 0,
+  });
+
+  const handleClientChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setClientForm({
+      ...clientForm,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleRequestChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setReqForm({
+      ...reqForm,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <>
       <div>
@@ -30,6 +71,8 @@ function CostumerPage() {
                     name="name"
                     type="text"
                     placeholder="ex: jonas miguel"
+                    value={clientForm.name}
+                    onChange={handleClientChange}
                   />
                 </div>
                 <div className="input-container">
@@ -39,6 +82,8 @@ function CostumerPage() {
                     name="email"
                     placeholder="ex: jonasmiguel@gmail.com"
                     type="email"
+                    value={clientForm.email}
+                    onChange={handleClientChange}
                   />
                 </div>
                 <div className="input-container">
@@ -48,10 +93,17 @@ function CostumerPage() {
                     name="phoneNumber"
                     placeholder="ex: 9898989898"
                     type="tel"
+                    value={clientForm.phoneNumber}
+                    onChange={handleClientChange}
                   />
                 </div>
               </div>
-              <Button url={BASE_URL} text="Criar" color={0} />
+              <Button
+                url={COSTUMER_URL}
+                text="Criar"
+                color={0}
+                formData={clientForm}
+              />
             </div>
           </section>
 
@@ -66,6 +118,8 @@ function CostumerPage() {
                     name="requestName"
                     type="text"
                     placeholder="ex: cute dress"
+                    value={reqForm.requestName}
+                    onChange={handleRequestChange}
                   />
                 </div>
                 <div className="input-container">
@@ -74,6 +128,8 @@ function CostumerPage() {
                     name="requestDescription"
                     className="altInputBox"
                     placeholder="ex: a cute dress with detailed yellow things"
+                    value={reqForm.requestDescription}
+                    onChange={handleRequestChange}
                   />
                 </div>
                 <div className="input-container">
@@ -83,6 +139,8 @@ function CostumerPage() {
                     className="altInputBox"
                     placeholder="ex: 22/09/2026"
                     type="date"
+                    value={reqForm.requestDeadline}
+                    onChange={handleRequestChange}
                   />
                 </div>
                 <div className="input-container">
@@ -91,14 +149,15 @@ function CostumerPage() {
                     className="altInputBox"
                     name="costumerId"
                     placeholder="grab the Id of the client that you want to link"
+                    value={reqForm.costumerId}
+                    onChange={handleRequestChange}
                   />
                 </div>
               </div>
-              <Button url={BASE_URL} text="Enviar" color={1} />
+              <Button url={REQUEST_URL} text="Enviar" color={1} formData={reqForm} />
             </div>
           </section>
         </main>
-     
       </div>
     </>
   );

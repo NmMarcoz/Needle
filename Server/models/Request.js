@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) =>{
         },
         requestValue:{
             type:DataTypes.DECIMAL(10,2),
-            allowNull:false
+            allowNull:true,
+            defaultValue: 0
         },
         requestDeadline:{
             type:DataTypes.DATE
