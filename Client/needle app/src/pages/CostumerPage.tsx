@@ -1,11 +1,12 @@
 import "../styles/CostumerPageStyles.css";
+import NavBar from "../Components/NavBar";
 import Button from "../Components/Button";
 import React, { useState } from "react";
 //import { useState } from "react";
 
 function CostumerPage() {
   const COSTUMER_URL = "http://localhost:3001/costumer";
-  const REQUEST_URL = "http://localhost:3001/request"
+  const REQUEST_URL = "http://localhost:3001/request";
 
   interface clientFormInterface {
     name: string;
@@ -49,15 +50,7 @@ function CostumerPage() {
     <>
       <div>
         <header>
-          <nav>
-            <div className="nav-container">
-              <div className="nav-text">
-                <span>Início</span>
-                <span>Clientes</span>
-                <span>Pedidos</span>
-              </div>
-            </div>
-          </nav>
+          <NavBar></NavBar>
         </header>
         <main>
           <section className="left-section">
@@ -154,7 +147,12 @@ function CostumerPage() {
                   />
                 </div>
               </div>
-              <Button url={REQUEST_URL} text="Enviar" color={1} formData={reqForm} />
+              <Button
+                url={REQUEST_URL}
+                text="Enviar"
+                color={1}
+                formData={reqForm}
+              />
             </div>
           </section>
         </main>

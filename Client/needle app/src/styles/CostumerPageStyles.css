@@ -49,35 +49,7 @@ main {
   align-items: center;
   justify-content: center;
 }
-nav {
-  position: absolute;
-}
-.nav {
-  width: 783px;
-  height: 65px;
-  background-color: #e7e7e7;
-  border-radius: 30px;
-  opacity: 50%;
-  margin-bottom: 50px;
-}
-.nav-container {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-}
-.nav-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #e7e7e7;
-}
-.nav-container span {
-  margin: 0%;
-  border: 0%;
-  margin-right: 25px;
-}
+
 .costumer-input {
   display: flex;
   flex-direction: column;
