@@ -15,7 +15,7 @@ function NavBar() {
     const buttons = [inicio, clientes, pedidos, perfil];
 
 
-    buttons.map((button) => {
+    buttons.forEach((button) => {
       activeButton?.id == button?.id
         ? button?.classList.add("active-text")
         : button?.classList.remove("active-text");

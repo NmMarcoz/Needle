@@ -9,7 +9,6 @@ interface buttonProps{
 }
 
 function Button({text, color, url, formData}: buttonProps){
-
     const buttonClass = color == 0? 'button': 'altButton';
     const handleSubmit = async () =>{
         try{

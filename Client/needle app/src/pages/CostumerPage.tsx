@@ -35,7 +35,7 @@ function CostumerPage() {
   const handleClientChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setClientForm({
       ...clientForm,
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value, //isso aqui <<<<
     });
   };
 
